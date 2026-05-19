@@ -1,0 +1,410 @@
+:root {
+  color-scheme: light;
+  --ink: #17202a;
+  --muted: #5b6778;
+  --line: #d5dce5;
+  --soft: #eef3f7;
+  --panel: #ffffff;
+  --accent: #0f766e;
+  --accent-strong: #0b5f59;
+  --danger: #b42318;
+  --warning: #795300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f9fb;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 36px;
+  border: 1px solid #b8c3cf;
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  border: 1px solid #bec8d4;
+  border-radius: 4px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 7px 9px;
+}
+
+textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+
+.topbar p,
+.sectionHeader p,
+.resultItem span {
+  color: var(--muted);
+}
+
+.topbar p,
+.sectionHeader p {
+  margin-top: 8px;
+}
+
+.status {
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: var(--soft);
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status.ok {
+  background: #e8f6ef;
+  color: #166534;
+}
+
+.status.needs {
+  background: #fff7e6;
+  color: var(--warning);
+}
+
+.wizardShell {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.stepRail {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  text-align: left;
+  background: transparent;
+}
+
+.step span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.step.active {
+  border-color: var(--accent);
+  background: #e7f5f2;
+  font-weight: 700;
+}
+
+.step.done span,
+.step.active span {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.wizardPanel {
+  min-height: 480px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+.grid.compact {
+  grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(120px, 1fr));
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.fieldGroup:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.checkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfcfd;
+  padding: 9px 10px;
+  color: var(--ink);
+}
+
+.checkRow input {
+  width: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.wizardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+.band {
+  width: 100%;
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+  margin-top: 22px;
+}
+
+.summaryGrid,
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.resultGrid.needsInput {
+  border-color: #f1c879;
+}
+
+.resultItem {
+  display: grid;
+  gap: 5px;
+  min-height: 68px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfd;
+  padding: 10px;
+}
+
+.resultItem strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.errors,
+.warnings,
+.questions {
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.errors,
+.errorBox {
+  color: var(--danger);
+}
+
+.warnings,
+.warningText,
+.questions {
+  color: var(--warning);
+}
+
+.errorBox {
+  border: 1px solid #f4b4ad;
+  border-radius: 8px;
+  background: #fff1f0;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.modifyFeedback {
+  display: grid;
+  gap: 6px;
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+  padding-top: 14px;
+}
+
+.modifyBox {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgb(23 32 42 / 0.38);
+  padding: 18px;
+}
+
+.questionModal {
+  width: min(720px, 100%);
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 24px 80px rgb(23 32 42 / 0.25);
+  padding: 20px;
+}
+
+.modalModify {
+  grid-template-columns: minmax(0, 1fr) 150px;
+}
+
+@media (max-width: 900px) {
+  main {
+    padding: 16px;
+  }
+
+  .topbar,
+  .sectionHeader,
+  .wizardShell,
+  .modifyBox {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stepRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid.compact,
+  .grid.two,
+  .grid.three,
+  .checkGrid,
+  .summaryGrid,
+  .resultGrid {
+    grid-template-columns: 1fr;
+  }
+}

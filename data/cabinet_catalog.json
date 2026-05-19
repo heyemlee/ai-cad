@@ -1,0 +1,55 @@
+[
+  {
+    "sku": "2CDB30",
+    "width": 30,
+    "height": 34.5,
+    "depth": 24,
+    "drawer_qty": 2,
+    "description": "30 inch Slide-in Cooktop Base 2 Drawers"
+  },
+  {
+    "sku": "2CDB33",
+    "width": 33,
+    "height": 34.5,
+    "depth": 24,
+    "drawer_qty": 2
+  },
+  {
+    "sku": "2CDB36",
+    "width": 36,
+    "height": 34.5,
+    "depth": 24,
+    "drawer_qty": 2
+  },
+  {
+    "sku": "B24",
+    "width": 24,
+    "height": 34.5,
+    "depth": 24
+  },
+  {
+    "sku": "SB36",
+    "width": 36,
+    "height": 34.5,
+    "depth": 24
+  },
+  {
+    "sku": "DW24",
+    "width": 24,
+    "height": 34.5,
+    "depth": 24,
+    "type": "appliance"
+  },
+  {
+    "sku": "W24",
+    "width": 24,
+    "height": 40,
+    "depth": 12
+  },
+  {
+    "sku": "W33",
+    "width": 33,
+    "height": 40,
+    "depth": 12
+  }
+]
