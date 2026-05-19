@@ -130,7 +130,7 @@ export async function launchAutoCADScript(
     };
   }
 
-  if (dwgPath) {
+  if (dwgPath && !existsSync(dwgPath)) {
     const core = await runCoreConsole(scriptPath, dwgPath);
     if (core.ok) {
       const pid = openDwg(dwgPath);
